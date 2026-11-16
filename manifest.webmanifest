@@ -1,0 +1,14 @@
+{
+  "name": "沙丘记牌器",
+  "short_name": "沙丘记牌器",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "zh-Hans",
+  "theme_color": "#191614",
+  "background_color": "#191614",
+  "icons": [
+    {"src": "./icon.png", "sizes": "1024x1024", "type": "image/png", "purpose": "any"}
+  ]
+}

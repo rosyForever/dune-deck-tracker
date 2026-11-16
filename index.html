@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#191614">
+  <meta name="description" content="实体《沙丘：帝国》的个人抽牌堆记牌器。加牌、删牌、翻面，随时查看抽牌堆。">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="apple-touch-icon" href="./icon.png">
+  <link rel="icon" href="./icon.png">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./deck.css">
+  <title>沙丘记牌器</title>
+</head>
+<body>
+  <main id="app" class="shell">
+    <p>正在打开记牌器…</p>
+  </main>
+  <dialog id="sheet" aria-labelledby="sheet-title">
+    <header class="sheet-header">
+      <h2 id="sheet-title"></h2>
+      <button data-action="close" class="quiet">关闭</button>
+    </header>
+    <div id="sheet-body"></div>
+  </dialog>
+  <p id="notice" role="status"></p>
+  <script type="module">
+    if (new URLSearchParams(location.search).has("classic")) import("./app.js");
+    else import("./deck.js");
+  </script>
+</body>
+</html>

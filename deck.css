@@ -1,0 +1,94 @@
+.manual {
+  --ink: #fff1df;
+  --muted: #bdaa98;
+  --sand: #ffc483;
+  --bg: #181513;
+  --surface: #25201d;
+  --line: #46372c;
+}
+.manual .shell {
+  max-width: 47rem;
+  padding: max(18px, env(safe-area-inset-top)) 16px calc(100px + env(safe-area-inset-bottom));
+}
+.manual-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 15px; }
+.manual-title span { color: var(--sand); font-size: .74rem; font-weight: 700; letter-spacing: .1em; }
+.manual-title h1 { margin-top: 3px; }
+.manual-tools { display: flex; gap: 6px; }
+.manual-tools button { padding-inline: 9px; font-size: .81rem; white-space: nowrap; }
+.draw-overview {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 14px 17px; border: 1px solid #90633f; border-radius: 16px;
+  background: radial-gradient(ellipse at 100% -40%, #724325, transparent 70%), linear-gradient(135deg, #38271f, #241b17);
+}
+.draw-overview h2 { margin: 0; font-size: .89rem; color: var(--sand); }
+.draw-value { display: flex; align-items: baseline; gap: 8px; margin: 1px 0 0; }
+.draw-value strong { color: var(--sand); font-size: clamp(2.8rem, 13vw, 3.9rem); line-height: 1.05; }
+.draw-value strong, .deck-stats strong, .deck-tabs span { font-variant-numeric: tabular-nums; }
+.deck-stats { min-width: 101px; border-left: 1px solid #94694685; padding-left: 14px; }
+.deck-stats p { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin: 8px 0; color: #e7cdb0; font-size: .86rem; }
+.deck-stats strong { font-size: 1rem; color: var(--ink); }
+.deck-controls { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin-top: 5px; }
+.deck-controls p { margin: 0; color: var(--muted); font-size: .82rem; }
+.deck-controls button { border: 0; padding-inline: 6px; font-size: .8rem; }
+.deck-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 4px; background: var(--surface); padding: 4px; border-radius: 12px; margin-bottom: 13px; }
+.deck-tabs button { background: transparent; border-color: transparent; color: var(--muted); padding-inline: 3px; font-size: .82rem; white-space: nowrap; }
+.deck-tabs button[aria-pressed="true"] { color: var(--sand); border-color: #865b3d; background: #382b23; }
+.deck-tabs span { color: inherit; margin-left: 4px; }
+.deck-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 11px; }
+.deck-tile { position: relative; min-width: 0; }
+.tile-flip {
+  display: flex; flex-direction: column; width: 100%; height: 100%; padding: 0; overflow: hidden;
+  text-align: left; border-radius: 12px; border: 1px solid #67452f; background: var(--surface);
+}
+.tile-flip[aria-pressed="true"] { border-color: var(--line); }
+.tile-art, .tile-back {
+  display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: cover; background: #362820;
+}
+.tile-back {
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px;
+  color: var(--muted); font-size: .79rem; background: repeating-linear-gradient(135deg,#292320,#292320 8px,#302723 8px,#302723 16px);
+}
+.back-mark { display: grid; place-items: center; border: 1px solid #b6895c75; border-radius: 50%; width: 37px; height: 37px; color: #d5a675; font-size: 1.3rem; }
+.tile-label { display: block; width: 100%; padding: 8px 9px 9px; }
+.tile-label strong { display: block; font-size: .86rem; line-height: 1.3; overflow-wrap: anywhere; }
+.tile-label small { display: block; color: var(--muted); font-size: .72rem; margin-top: 3px; }
+.flipped .tile-label strong { color: #d0bca7; }
+.tile-remove {
+  position: absolute; right: 4px; top: 4px; display: grid; place-items: center;
+  width: 44px; height: 44px; min-height: 44px; border-radius: 7px; border-color: #d7b694; padding: 0;
+  background: #241b17ea; color: #ffe4c9; font-size: 1.24rem; line-height: 1;
+}
+.deck-empty { margin: 8px 0; border: 1px dashed var(--line); border-radius: 11px; padding: 18px 10px; color: var(--muted); text-align: center; }
+.legacy-link { display: inline-block; margin-top: 14px; color: var(--muted); font-size: .8rem; text-underline-offset: 3px; }
+.deck-dock {
+  position: fixed; z-index: 2; bottom: 0; left: 50%; transform: translateX(-50%); width: min(100%, 47rem);
+  border-top: 1px solid var(--line); background: #181513f2;
+  padding: 9px 16px max(10px, env(safe-area-inset-bottom));
+}
+.deck-dock button { width: 100%; min-height: 49px; font-size: 1rem; }
+.manual dialog { width: min(100%, 45rem); max-height: 88vh; max-height: 88dvh; }
+.manual #sheet-body { min-height: 0; }
+.search-label { display: block; }
+.manual input[type="search"] { margin-bottom: 9px; }
+.edition-choices { display: flex; gap: 5px; flex-wrap: wrap; }
+.edition-choices button { font-size: .77rem; padding: 5px 8px; }
+.edition-choices button[aria-pressed="true"] { background: #4a3223; border-color: #bd8657; }
+.sheet-notice { min-height: 1.3em; margin: 6px 0 0; color: var(--sand); font-size: .82rem; line-height: 1.3; }
+.search-total { color: var(--muted); margin: 3px 0 7px; font-size: .77rem; }
+.library-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px; }
+.library-row { display: flex; align-items: center; gap: 8px; width: 100%; padding: 5px 9px 5px 5px; text-align: left; }
+.library-art { display: block; flex: 0 0 47px; width: 47px; height: 47px; object-fit: cover; border-radius: 5px; }
+.library-name { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.library-name strong, .library-name small { display: block; }
+.library-name small { font-weight: 400; font-size: .74rem; color: var(--muted); margin-top: 2px; }
+.library-plus { color: var(--sand); flex: none; }
+.custom-add { margin-top: 8px; }
+.new-deck-options { display: grid; gap: 7px; }
+.reset-copy { margin: 0 0 10px; color: var(--muted); }
+.custom-art { display: grid; place-items: center; color: var(--sand); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.manual #notice:not(:empty) { bottom: calc(78px + env(safe-area-inset-bottom)); }
+@media (max-width: 640px) {
+  .deck-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 9px; }
+  .library-list { grid-template-columns: 1fr; }
+}
