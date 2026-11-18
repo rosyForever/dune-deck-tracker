@@ -120,6 +120,7 @@ function render() {
       '">' + label + ' <span>' + count + '</span></button>').join("") + '</nav>' +
     (visible.length ? '<div class="deck-grid">' + visible.map(({card,index})=>tile(card,index)).join("") + '</div>' :
       '<p class="deck-empty">' + (current.length ? "这个视图里暂无卡牌。" : "牌组空了，可以通过下方添加卡牌。") + '</p>') +
+    '<a class="legacy-link" href="./catalog.html">查看卡牌图鉴</a>' +
     (hasLegacy ? '<a class="legacy-link" href="?classic=1">打开旧版对局记录</a>' : "") +
     '<div class="deck-dock"><button id="add-card" type="button" class="accent" data-action="add-sheet">＋ 添加卡牌</button></div>';
 }
